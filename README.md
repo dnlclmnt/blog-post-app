@@ -53,7 +53,24 @@ end
 <!-- As a user, I when I submit my post, I am redirected to the home page. -->
 # Stretch Challenges
 <!-- As a user, I can delete my blog post. -->
+git checkout -b delete-blog-post-dc-cr
+
 <!-- As a user, I can update my blog post. -->
 <!-- As a developer, I can ensure that all blog posts have titles and content for each post. -->
+
+<!-- Created strong params to check for title and content. Create method will call on blog_post_params to check if new blog post is valid -->
+def create
+        @blog = BlogPost.create(blog_post_params)
+        if @blog.valid?
+            redirect_to blog_posts_path
+        else
+            redirect_to new_blog_post_path
+        end
+    end
+
+    private 
+        def blog_post_params
+            params.require(:blog_post).permit(:title, :content)
+        end
 <!-- As a developer, I can ensure that all blog post titles are unique. -->
 <!-- As a developer, I can ensure that blog post titles are at least 10 characters. -->
