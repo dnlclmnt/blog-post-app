@@ -1,10 +1,15 @@
-<h1>Blog Posts</h1>
+<body style="background-color:rgba(150, 149, 144, 0.5)">
+<h1 style="text-align:center"><em>The Ramblings of a Mad Man</em></h1>
 
 <% @blogs.map do |val| %>
     <ul>
         <li>
         <%= link_to val.title, blog_post_path(val) %>
+        <p style="font-size:14px">Blog posted on 
+        <%= val.created_at.strftime("#{val.created_at.day.ordinalize} %b %Y at %H:%M %Z") %>
+        </p>
         </li>
     </ul>
     <% end %>
     <%= link_to 'Add a new blog post', new_blog_post_path %>
+</body>

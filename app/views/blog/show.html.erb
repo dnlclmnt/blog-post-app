@@ -1,7 +1,20 @@
+<body style="background-color:rgba(150, 149, 144, 0.5)">
 <h1> <%= @blog.title %></h1>
+<div style="text-align:center; margin: 60px;">
 <%= @blog.content %>
+<p><em> Posted on
+<%= @blog.created_at.strftime("#{@blog.created_at.day.ordinalize} %b %Y at %H:%M %Z") %>
+</em>
+</p>
+</div>
 
 <br>
 <br>
-
+<%= button_to 'Edit post', edit_blog_post_path(@blog), method: :get%>
+<br>
+<br>
+<%= button_to 'Delete blog entry', delete_blog_post_path(@blog), method: :delete, form:{data:{'turbo-confirm': 'Are you sure?'}} %>
+<br>
+<br>
 <%= link_to 'Return to Home', blog_posts_path %>
+</body>

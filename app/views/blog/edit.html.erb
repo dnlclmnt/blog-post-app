@@ -1,7 +1,7 @@
-<body style="background-color:rgba(150, 149, 144, 0.5)">
-<h1>Add a New Blog Post</h1>
+<h1>Edit post</h1>
+
 <%= form_with model: @blog do |form| %>
-    <div style="text-align:center; box-shadow: inset 0 0 2000px rgba(197,122,12,0.45); filter: drop-shadow(16px 16px 20px white); background: inherit; margin: auto 200px; border-radius:10px; padding:10px">
+    <div style="text-align:center; background-color:rgba(201,197,177,0.45); margin: auto 200px; border-radius:10px; padding:10px">
     <%= form.label :title %>: &nbsp; &nbsp;
     <%= form.text_field :title, placeholder:'Enter blog title here' %>
     <br>
@@ -10,11 +10,10 @@
     <%= form.text_area :content, placeholder:'Write your post here!', size: "40x8" %>
     <br>
     <br>
-    <%= form.submit 'Add Blog Post' %>
+    <%= form.submit 'Edit Post' %>
     </div>
-    <br>
+<br>
     <div style="text-align:center">
     <%= link_to 'Back to Home Page', blog_posts_path %>
     </div>
 <% end %>
-</body>
