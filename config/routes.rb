@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root "blog#index"
   # index route
-  get 'blogs' => 'blog#index', as: 'blogs'
+  get 'blog_posts' => 'blog#index', as: 'blog_posts'
   # new route
-  get 'blogs/new' => 'blog#new', as: 'new_blog'
+  get 'blog_posts/new' => 'blog#new', as: 'new_blog_post'
   # show route
-  get 'blogs/:id' => 'blog#show', as: 'blog'
+  get 'blog_posts/:id' => 'blog#show', as: 'blog_post'
   # create route
-  post 'blogs' => 'blog#create'
+  post 'blog_posts' => 'blog#create'
 end

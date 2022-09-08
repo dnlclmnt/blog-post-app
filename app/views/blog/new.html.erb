@@ -1,14 +1,18 @@
 <h1>Add a New Blog Post</h1>
-<%= form_with url: '/blogs', local: true do |form| %>
-    <div style="text-align:center">
+<%= form_with model: @blog do |form| %>
+    <div style="text-align:center; background-color:rgba(201,197,177,0.45); margin: auto 200px; border-radius:10px; padding:10px">
     <%= form.label :title %>: &nbsp; &nbsp;
-    <%= form.text_field :title %>
+    <%= form.text_field :title, placeholder:'Enter blog title here' %>
     <br>
     <br>
     <%= form.label :content %>:
-    <%= form.text_field :content %>
+    <%= form.text_area :content, placeholder:'Write your post here!', size: "40x8" %>
     <br>
     <br>
     <%= form.submit 'Add Blog Post' %>
+    </div>
+<br>
+    <div style="text-align:center">
+    <%= link_to 'Back to Home Page', blog_posts_path %>
     </div>
 <% end %>

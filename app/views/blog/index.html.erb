@@ -3,8 +3,8 @@
 <% @blogs.map do |val| %>
     <ul>
         <li>
-        <%= val.title %>
+        <%= link_to val.title, blog_post_path(val) %>
         </li>
     </ul>
     <% end %>
-    <%= link_to 'Add a new blog post', new_blog_path %>
+    <%= link_to 'Add a new blog post', new_blog_post_path %>
